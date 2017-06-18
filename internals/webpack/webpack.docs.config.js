@@ -11,7 +11,7 @@ module.exports = {
   ].filter((a) => a),
   output: {
     path: path.resolve(process.cwd(), 'docs'),
-    publicPath: '/',
+    publicPath: '/pcg32/',
     filename: '[name].js',
     chunkFilename: '[name].chunk.js',
   },
