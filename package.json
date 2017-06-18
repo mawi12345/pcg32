@@ -19,13 +19,9 @@
     "babel-preset-env": "^1.4.0",
     "compression": "^1.6.2",
     "cross-env": "^5.0.0",
-    "css-loader": "^0.28.1",
-    "docco": "^0.7.0",
     "express": "^4.15.2",
     "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.28.0",
-    "image-webpack-loader": "^3.3.1",
-    "style-loader": "^0.17.0",
     "webpack": "^2.5.1",
     "webpack-closure-compiler": "^2.1.4",
     "webpack-dev-middleware": "^1.10.2",
@@ -34,7 +30,7 @@
   "scripts": {
     "prepublish": "npm run build",
     "build": "cross-env NODE_ENV=production webpack --config internals/webpack/webpack.lib.config.js -p",
-    "build:demo": "cross-env NODE_ENV=production webpack --config internals/webpack/webpack.demo.config.js -p",
+    "build:docs": "cross-env NODE_ENV=production webpack --config internals/webpack/webpack.docs.config.js -p",
     "start": "cross-env NODE_ENV=development node internals/server"
   },
   "dependencies": {

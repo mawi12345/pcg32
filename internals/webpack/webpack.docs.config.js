@@ -7,10 +7,10 @@ const isDev = process.env.NODE_ENV !== 'production';
 module.exports = {
   entry: [
     isDev && 'webpack-hot-middleware/client?reload=true',
-    path.join(process.cwd(), 'demo/app.js'), // Start with js/app.js
+    path.join(process.cwd(), 'docs-src/app.js'), // Start with js/app.js
   ].filter((a) => a),
   output: {
-    path: path.resolve(process.cwd(), 'build'),
+    path: path.resolve(process.cwd(), 'docs'),
     publicPath: '/',
     filename: '[name].js',
     chunkFilename: '[name].chunk.js',
@@ -55,7 +55,7 @@ module.exports = {
     isDev && new webpack.HotModuleReplacementPlugin(), // Tell webpack we want hot reloading
     // new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
-      template: 'demo/index.html',
+      template: 'docs-src/index.html',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
