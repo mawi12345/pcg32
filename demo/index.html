@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- The first thing in any HTML file should be the charset -->
+  <meta charset="utf-8">
+  <!-- Make the page mobile compatible -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Make IE render in the latest version -->
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <!-- Allow installing the app to the homescreen -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>pcg32.js</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+</head>
+<body style="font-family: 'Source Code Pro', monospace;">
+<h1>pcg32.js</h1>
+<pre style="font-family: 'Source Code Pro', monospace;">
+result: 32-bit unsigned Number
+period: 2^64 (* 2^63 streams)
+ state: 64-bit
+</pre>
+<pre style="width: 80px; display: inline-block; font-family: 'Source Code Pro', monospace; margin: 0;">  Seed: </pre><input id="seed" /><br />
+<pre style="width: 80px; display: inline-block; font-family: 'Source Code Pro', monospace; margin: 0;">Stream: </pre><input id="stream" /><br />
+<span style="width: 80px; display: inline-block;"></span><button id="apply">Apply</button>
+<!-- The log hooks into this pre -->
+<pre id="log" style="font-family: 'Source Code Pro', monospace;"></pre>
+<!-- A lot of magic happens in this file. HtmlWebpackPlugin automatically includes all assets (e.g. bundle.js, main.css) with the correct HTML tags, which is why they are missing in this HTML file. Don't add any assets here! (Check out webpackconfig.js if you want to know more) -->
+</body>
+</html>
