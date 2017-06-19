@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const ClosureCompilerPlugin = require('webpack-closure-compiler');
 
 module.exports = {
   entry: {
@@ -18,25 +17,17 @@ module.exports = {
         test: /\.js$/, // Transform all .js files required somewhere with Babel
         loader: 'babel-loader',
         exclude: /node_modules/,
+        query: {
+          presets: ['env']
+        }
       }
     ]
   },
   plugins: [
-    new ClosureCompilerPlugin({
-      compiler: {
-        language_in: 'ECMASCRIPT6',
-        language_out: 'ECMASCRIPT5',
-        compilation_level: 'ADVANCED'
-      },
-      concurrency: 3,
-    }),
     new webpack.BannerPlugin({
       banner: [
         'pcg32.js (c) 2017 Martin Wind',
         'Released under the Apache License, Version 2.0',
-        'this build includes parts of',
-        '  long.js (c) 2013 Daniel Wirtz <dcode@dcode.io>',
-        '  Released under the Apache License, Version 2.0',
       ].join('\n')
     }),
   ],
