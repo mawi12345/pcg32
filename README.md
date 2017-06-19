@@ -1,4 +1,7 @@
-﻿# pcg32.js
+
+# pcg32.js
+
+[![open issues](https://img.shields.io/github/issues/mawi12345/pcg32.svg?style=flat)](https://github.com/mawi12345/pcg32/issues) [![npm version](https://img.shields.io/npm/v/pcg32.svg?style=flat)](https://www.npmjs.com/package/pcg32)
 
 A simple fast space-efficient statistically good algorithm for random number generation in JavaScript.
 
