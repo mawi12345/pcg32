@@ -1,6 +1,6 @@
 {
   "name": "pcg32",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Martin Wind <mawi1988@gmail.com>",
   "description": "A simple fast space-efficient statistically good algorithm for random number generation in JavaScript",
   "license": "Apache-2.0",
