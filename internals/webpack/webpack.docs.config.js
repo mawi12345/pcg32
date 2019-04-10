@@ -75,7 +75,7 @@ module.exports = {
     }),
     new webpack.BannerPlugin({
       banner: [
-        'pcg32.js demo (c) 2017 Martin Wind',
+        'pcg32.js demo (c) 2019 Martin Wind',
         'Released under the Apache License, Version 2.0',
       ].join('\n')
     }),
