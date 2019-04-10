@@ -5,6 +5,7 @@ const fs = require('fs');
 const isDev = process.env.NODE_ENV !== 'production';
 
 module.exports = {
+  mode: isDev ? 'development' : 'production',
   entry: [
     isDev && 'webpack-hot-middleware/client?reload=true',
     path.join(process.cwd(), 'docs-src/app.js'), // Start with js/app.js
@@ -16,21 +17,23 @@ module.exports = {
     chunkFilename: '[name].chunk.js',
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/, // Transform all .js files required somewhere with Babel
-        loader: 'babel-loader',
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          },
+        },
         exclude: /node_modules/,
-        query: {
-          presets: ['env']
-        }
       }, {
         test: /\.(jpg|png|gif)$/,
-        loaders: [
+        use: [
           'file-loader',
           {
             loader: 'image-webpack-loader',
-            query: {
+            options: {
               progressive: true,
               gifsicle: {
                 interlaced: false,
